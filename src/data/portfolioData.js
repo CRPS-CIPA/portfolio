@@ -74,7 +74,7 @@ export const portfolioData = {
         //   { name: "Next.js", level: 88, tag: "Advanced" },
         { name: "HTML5 & CSS3 / Vanilla", level: 95, tag: "Expert" },
         //   { name: "Tailwind CSS", level: 90, tag: "Advanced" },
-        s],
+      ],
     },
     {
       category: "Backend & Database",
