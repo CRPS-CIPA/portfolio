@@ -9,7 +9,7 @@ import avatarImg from '../assets/foto.png';
 export const portfolioData = {
   // Informasi Pribadi
   personal: {
-    name: "Hisyam ",
+    name: "Shaniza Hisyam",
     nickname: "Syam",
     title: "Fullstack Web & Frontend Engineer",
     tagline: "Membangun antarmuka web modern berkinerja tinggi dengan pengalaman pengguna yang imersif.",
