@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Micro-animations, Keyframes & Interactive Effects
+   ========================================================================== */
+
+/* Ambient Floating Orbs */
+@keyframes floatOrb1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(60px, 80px) scale(1.1);
+  }
+  66% {
+    transform: translate(-40px, 50px) scale(0.95);
+  }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-80px, -60px) scale(1.15);
+  }
+  66% {
+    transform: translate(50px, -40px) scale(0.9);
+  }
+}
+
+@keyframes floatOrb3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(70px, -60px) scale(1.1);
+  }
+}
+
+.orb-1 {
+  animation: floatOrb1 20s infinite ease-in-out;
+}
+
+.orb-2 {
+  animation: floatOrb2 25s infinite ease-in-out;
+}
+
+.orb-3 {
+  animation: floatOrb3 22s infinite ease-in-out;
+}
+
+/* Pulsing Status Dot */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.status-pulse {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+  animation: pulseGlow 2s infinite;
+}
+
+/* Fade In Up Entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Shimmer Highlight Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #6366f1 0%, #a855f7 30%, #06b6d4 50%, #6366f1 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Modal Animations */
+@keyframes modalBackdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalContentPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-backdrop-animate {
+  animation: modalBackdropFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-content-animate {
+  animation: modalContentPop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hover Floating Effect for Cards */
+.hover-float {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-float:hover {
+  transform: translateY(-6px);
+}
