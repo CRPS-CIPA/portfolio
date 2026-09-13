@@ -238,19 +238,116 @@ export const portfolioData = {
     // },
   ],
 
-  // Pendidikan & Sertifikasi
+  // Pendidikan 
   education: [
     {
       degree: "S1 Teknik Informatika",
       institution: "Universitas Teuku Umar",
       period: "2021 - 2026",
-      description: "Lulus dengan predikat Cum Laude. Fokus riset pada Rekayasa Perangkat Lunak",
+      description: "Lulus dengan predikat sangat memuaskan. Fokus riset pada Pengolahan Citra Digital.",
     },
-    // {
-    //   degree: "Professional Fullstack Web Developer Certification",
-    //   institution: "Global Tech Academy",
-    //   period: "2021",
-    //   description: "Sertifikasi komprehensif mencakup React.js, Node.js, Database Architecture, CI/CD, dan Security Best Practices.",
-    // },
+
+    {
+      degree: "Mia (Matematika dan Ilmu Alam) 1",
+      institution: "SMA Negeri 3 Meulaboh",
+      period: "2019 - 2021",
+      description: "Lulus dengan predikat sangat memuaskan.",
+    },
+
+    {
+      degree: "Mia (Matematika dan Ilmu Alam) 1 ",
+      institution: "SMA Swasta Darul Aitami",
+      period: "2018 - 2019",
+      description: "Lulus dengan predikat sangat memuaskan.",
+    },
+
+    {
+      degree: "SMP Swasta Darul Aitami",
+      institution: "SMP Swasta Darul Aitami",
+      period: "2015 - 2018",
+      description: "Lulus dengan predikat sangat memuaskan.",
+    },
+
+    {
+      degree: "SD Negeri 1 Percontohan Meulaboh",
+      institution: "SD Negeri 1 Percontohan Meulaboh",
+      period: "2009 - 2015",
+      description: "Lulus dengan predikat sangat memuaskan.",
+    },
+  ],
+
+  // Sertifikasi
+  certificate: [
+    {
+      title: "STADIUM GENERAL FAKULTAS TEKNIK",
+      issuer: "Lembaga Pedididkan dan Pelatihan DETIK ",
+      period: "13 Desember 2022",
+      description: " Telah mengikuti kursus komputer paket Microsoft Office ",
+      image: "../certificate/ft-utu.png"
+    },
+
+    {
+      title: "Paket Microsoft Office 2022",
+      issuer: "Universitas Teuku Umar",
+      period: "07 February 2024",
+      description: "Optimalisasi Pendidikan Karakter dalam Kurikulum Teknik Untuk menyiapkan Generasi Indonesia Emas 2045.",
+      image: "../certificate/lkp.png"
+    },
+
+    {
+      title: "Waktu & Orang Sukses ",
+      issuer: "Mesjid Kampus Universitas Teuku Umar",
+      period: "27 November 2021",
+      description: "Kajian Ba'da subuh diselengarakan oleh Dewan Kemakmuran Mesjid (DKM) Mesjid Kampus Universitas Teuku Umar",
+      image: "../certificate/p31.png"
+    },
+
+    {
+      title: "RAKERWIL KE VII",
+      issuer: "HIMATIF FT-UTU",
+      period: "2 Mei 2025",
+      description: "Peran AI Dan Teknolofi di Era Socienty 5.0.",
+      image: "../certificate/peserta.png"
+    },
+
+    {
+      title: "Program Penguatan Kapasitas Organisasi Kemahasiswaan (PPK-ORMAWA) 2024",
+      issuer: "Direktorat Pembelajaran dan Kemahasiswaan",
+      period: "16 November 2024",
+      description: "Program Penguatan Kapasitas Organisasi Kemahasiswaan 2024 yang di laksanakan pada Juni - Oktober 2024.",
+      image: "../certificate/ppkormawa.png"
+    },
+
+    {
+      title: "KAGGLE LEARNING CERTIFICATE",
+      issuer: "KAGGLE",
+      period: "28 Agustus 2023",
+      description: "Python",
+      image: "../certificate/python.png"
+    },
+
+    {
+      title: "PIAGAM PERHARGAAN",
+      issuer: "Rektor Universitas Udayana ",
+      period: "08 November 2024",
+      description: "Dalam kegiatan Semilokal Nasional/Seminar Bhakti Desa Abdidaya Ormawa 2024 Di Universitas Udayana Pada jumat 8 November 2024. ",
+      image: "../certificate/semilokal.png"
+    },
+
+    {
+      title: "PIAGAM PERHARGAAN",
+      issuer: "Rektor Universitas Udayana ",
+      period: "08 November 2024",
+      description: "Dalam kegiatan Workshop Pembuatan Poster Abdidaya Ormawa 2024 Di Universitas Udayana Pada jumat 8 November 2024. ",
+      image: "../certificate/workshop.png"
+    },
+
+    {
+      title: "Traning Dasara Organisasi TDO A.2021",
+      issuer: "Universitas Teuku Umar",
+      period: "25 Oktober 2021",
+      description: "Membentuk karakter dan etika Mahasiswa Teknik agar dapat di implementasikan dalam organisasi dan akademisi..",
+      image: "../certificate/tdo.png"
+    },
   ],
 };

@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
-import { Briefcase, GraduationCap, Calendar, Building, Award } from 'lucide-react';
+import { Briefcase, GraduationCap, Calendar, Building, Award, X } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Experience() {
-  const { experiences, education } = portfolioData;
+  const { experiences, education, certificate } = portfolioData;
   const [activeTab, setActiveTab] = useState('experience');
+  const [selectedImage, setSelectedImage] = useState(null); // ✅ Untuk modal gambar
+
+  // Fungsi tutup modal
+  const openModal = (imgSrc) => {
+    setSelectedImage(imgSrc);
+    document.body.classList.add('modal-open'); // Kunci halaman saat modal terbuka
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+    document.body.classList.remove('modal-open'); // Buka kunci saat modal ditutup
+  };
 
   return (
     <section id="experience" className="section experience-section">
       <div className="container">
-        {/* Section Header */}
+        {/* Header Section */}
         <div className="section-header">
           <span className="section-badge">Jejak Karir & Edukasi</span>
           <h2 className="section-title">
@@ -29,31 +41,33 @@ export default function Experience() {
             <Briefcase size={18} />
             <span>Pengalaman Kerja</span>
           </button>
-
           <button
             onClick={() => setActiveTab('education')}
             className={`experience-tab-btn ${activeTab === 'education' ? 'experience-tab-active' : ''}`}
           >
             <GraduationCap size={18} />
-            <span>Pendidikan & Sertifikasi</span>
+            <span>Pendidikan</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('certificate')}
+            className={`experience-tab-btn ${activeTab === 'certificate' ? 'experience-tab-active' : ''}`}
+          >
+            <Award size={18} />
+            <span>Sertifikat</span>
           </button>
         </div>
 
-        {/* Timeline Content */}
+        {/* Konten Tab */}
         <div className="timeline-container">
+          {/* === PENGALAMAN KERJA === */}
           {activeTab === 'experience' && (
             <div className="timeline-list">
               {experiences.map((item, index) => (
                 <div key={index} className="timeline-item">
-                  {/* Timeline Dot & Line */}
                   <div className="timeline-marker">
-                    <div className="timeline-dot">
-                      <Briefcase size={14} />
-                    </div>
+                    <div className="timeline-dot"><Briefcase size={14} /></div>
                     {index < experiences.length - 1 && <div className="timeline-line" />}
                   </div>
-
-                  {/* Timeline Card */}
                   <div className="glass-card timeline-card hover-float">
                     <div className="timeline-card-header">
                       <div>
@@ -68,17 +82,11 @@ export default function Experience() {
                         <span>{item.period}</span>
                       </div>
                     </div>
-
-                    <p className="timeline-description">
-                      {item.description}
-                    </p>
-
+                    <p className="timeline-description">{item.description}</p>
                     {item.technologies && (
                       <div className="timeline-tags">
                         {item.technologies.map((tech, idx) => (
-                          <span key={idx} className="badge">
-                            {tech}
-                          </span>
+                          <span key={idx} className="badge">{tech}</span>
                         ))}
                       </div>
                     )}
@@ -88,19 +96,15 @@ export default function Experience() {
             </div>
           )}
 
+          {/* === PENDIDIKAN === */}
           {activeTab === 'education' && (
             <div className="timeline-list">
               {education.map((item, index) => (
                 <div key={index} className="timeline-item">
-                  {/* Timeline Dot & Line */}
                   <div className="timeline-marker">
-                    <div className="timeline-dot">
-                      <Award size={14} />
-                    </div>
+                    <div className="timeline-dot"><GraduationCap size={14} /></div>
                     {index < education.length - 1 && <div className="timeline-line" />}
                   </div>
-
-                  {/* Timeline Card */}
                   <div className="glass-card timeline-card hover-float">
                     <div className="timeline-card-header">
                       <div>
@@ -115,10 +119,31 @@ export default function Experience() {
                         <span>{item.period}</span>
                       </div>
                     </div>
+                    <p className="timeline-description">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
 
-                    <p className="timeline-description">
-                      {item.description}
-                    </p>
+          {/* === ✅ SERTIFIKAT (BENTUK KARTU BARIS + KLIK UNTUK BUKA GAMBAR) === */}
+          {activeTab === 'certificate' && (
+            <div className="certificate-grid">
+              {certificate.map((item, index) => (
+                <div
+                  key={index}
+                  className="glass-card certificate-card hover-float"
+                  onClick={() => openModal(item.image)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <div className="certificate-header">
+                    <div className="certificate-date">
+                      <Calendar size={14} />
+                      <span>{item.period}</span>
+                    </div>
+                    <h3 className="certificate-title">{item.title}</h3>
+                    <p className="certificate-issuer">{item.issuer}</p>
+                    <p className="certificate-desc">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -126,6 +151,18 @@ export default function Experience() {
           )}
         </div>
       </div>
+
+      {/* === ✅ MODAL / POP-UP GAMBAR SERTIFIKAT === */}
+      {selectedImage && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <X size={24} />
+            </button>
+            <img src={selectedImage} alt="sertifikat" className="modal-image" />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
